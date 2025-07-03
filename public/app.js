@@ -150,7 +150,6 @@ document.addEventListener('DOMContentLoaded', () => {
     chatLog.scrollTop = chatLog.scrollHeight;
     return messageElement;
 }
-    }
 
     // --- Run the initialization function when the script loads ---
     initializeToolFromUrl();
