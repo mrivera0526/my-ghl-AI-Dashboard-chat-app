@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Assistant</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="chat-container">
+        <div id="chat-log">
+            <div class="message assistant">Hello! How can I help you today? Type @ to switch assistants.</div>
+        </div>
+        <div id="input-container">
+            <div id="at-popup" class="at-popup" style="display: none;"></div>
+            <form id="chat-form">
+                <div id="active-tool-tag" style="display: none;"></div>
+                <input type="text" id="message-input" placeholder="Type your message or @ for tools..." autocomplete="off" required>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
