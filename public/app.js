@@ -133,13 +133,23 @@ document.addEventListener('DOMContentLoaded', () => {
         messageInput.focus();
     }
 
-    function addMessage(text, sender) {
-        const messageElement = document.createElement('div');
-        messageElement.classList.add('message', sender);
+   function addMessage(text, sender) {
+    const messageElement = document.createElement('div');
+    messageElement.classList.add('message', sender);
+
+    if (sender === 'assistant') {
+        // If the message is from the assistant, parse it as Markdown
+        // The 'marked.parse()' function converts the Markdown text to HTML
+        messageElement.innerHTML = marked.parse(text);
+    } else {
+        // If the message is from the user, just display it as plain text
         messageElement.textContent = text;
-        chatLog.appendChild(messageElement);
-        chatLog.scrollTop = chatLog.scrollHeight;
-        return messageElement;
+    }
+
+    chatLog.appendChild(messageElement);
+    chatLog.scrollTop = chatLog.scrollHeight;
+    return messageElement;
+}
     }
 
     // --- Run the initialization function when the script loads ---
