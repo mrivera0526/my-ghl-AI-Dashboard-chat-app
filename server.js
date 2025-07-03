@@ -3,6 +3,8 @@ const express = require('express');
 const OpenAI = require('openai');
 const cors = require('cors');
 const path = require('path');
+const marked = require('marked'); // Add this line
+
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -29,6 +31,10 @@ const assistantMap = {
 };
 // --- End of Map ---
 
+// Make marked available to the frontend globally
+app.get('/marked.min.js', (req, res) => {
+    res.sendFile(path.join(__dirname, 'node_modules', 'marked', 'marked.min.js'));
+});
 app.post('/api/chat', async (req, res) => {
   try {
     const { message, tool } = req.body;
