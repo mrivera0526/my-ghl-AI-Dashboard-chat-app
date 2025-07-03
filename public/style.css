@@ -109,3 +109,30 @@ button:hover {
     border-radius: 10px;
     font-weight: bold;
 }
+/* --- Styles for Formatted Markdown Content --- */
+.message.assistant h1,
+.message.assistant h2,
+.message.assistant h3 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.message.assistant ul,
+.message.assistant ol {
+    padding-left: 25px; /* Indent lists */
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.message.assistant li {
+    margin-bottom: 5px; /* Space out list items */
+}
+
+.message.assistant p {
+    margin-bottom: 10px; /* Add space between paragraphs */
+}
+
+.message.assistant p:last-child {
+    margin-bottom: 0; /* Remove extra space at the end of a message */
+}
+
